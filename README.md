@@ -1,35 +1,73 @@
 # Forest Fire Early Warning System
 
-A LoRa mesh-based early warning system designed to detect forest fires in remote areas with zero internet connectivity. The architecture consists of ultra-low-power sensor nodes deployed in the field and a central hub receiver stationed at a local monitoring post.
+A LoRa mesh network architecture designed for early forest fire detection in areas lacking internet connectivity.
 
-## System Architecture
+![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+![Platform: ESP32](https://img.shields.io/badge/Platform-ESP32-lightgrey.svg)
+![Language: C++](https://img.shields.io/badge/Language-C++-red.svg)
 
-### 1. Sensor Node (`/node`)
-The sensor node gathers environmental data and transmits it wirelessly.
+## Table of Contents
+1. [Features](#features)
+2. [Hardware Requirements](#hardware-requirements)
+3. [Getting Started](#getting-started)
+4. [Usage](#usage)
+5. [Directory Structure](#directory-structure)
+6. [Contributing](#contributing)
+7. [License](#license)
+8. [Contact](#contact)
 
-*   **Extreme Power Saving:** Leverages ESP32 Deep Sleep, waking up only every 5 minutes to read sensors and transmit data, allowing months of battery life.
-*   **Data Compression:** Compresses sensor readings into a lightweight, comma-separated string to minimize LoRa bandwidth and transmission time.
-*   **Sensors:** Monitors Temperature and Humidity (DHT22), Smoke (MQ-2), and Soil Moisture.
-
-### 2. Central Hub (`/hub`)
-The central hub listens for incoming LoRa packets and triggers alerts.
-
-*   **Fire Detection Engine:** Evaluates incoming data against critical fire risk thresholds (high temperature, low humidity, high smoke).
-*   **Dual Alerting:** Triggers a local siren (buzzer) and dispatches an SMS alert via a SIM800L GSM module when a fire risk is confirmed.
+## Features
+* Dual architecture consisting of ultra low power sensor nodes and a central alert hub.
+* Advanced power saving using ESP32 deep sleep functionality for field nodes.
+* String compression algorithms to optimize LoRa payload bandwidth.
+* Dual alerting mechanism via an active siren and automated SMS notifications.
 
 ## Hardware Requirements
+* ESP32 Development Boards
+* LoRa Transceivers (915MHz)
+* DHT22 Temperature and Humidity Sensor
+* MQ-2 Gas and Smoke Sensor
+* Capacitive Soil Moisture Sensor
+* SIM800L GSM Module
+* Active Buzzer
 
-*   **Node:** ESP32, LoRa Transceiver (915MHz), DHT22, MQ-2 Gas Sensor, Capacitive Soil Moisture Sensor.
-*   **Hub:** ESP32, LoRa Transceiver (915MHz), SIM800L GSM Module, Active Buzzer.
+## Getting Started
 
-## Software Stack
+### Prerequisites
+* PlatformIO installed on your development machine.
 
-*   **Environment:** PlatformIO / Arduino framework
-*   **Language:** C++
-*   **Libraries:** `SPI`, `LoRa`, `DHT sensor library`, `HardwareSerial`
+### Installation
+```bash
+git clone https://github.com/hamin-baek/forest-fire-early-warning.git
+cd forest-fire-early-warning/node
+pio run --target upload
+cd ../hub
+pio run --target upload
+```
 
-## Setup Instructions
+## Usage
+Deploy the sensor node in the target area and power the central hub at a monitoring station. The node will sample data and enter deep sleep. The hub will remain active to receive packets and trigger alerts if fire risk thresholds are met.
 
-1.  Open the `/node` and `/hub` folders as separate PlatformIO projects.
-2.  Upload the respective firmware to your ESP32 boards.
-3.  Ensure both LoRa modules are configured to the same frequency band (e.g., 915MHz).
+## Directory Structure
+```text
+node/
+  src/main.cpp      # Sensor node firmware
+  platformio.ini    # Node build configuration
+hub/
+  src/main.cpp      # Central hub firmware
+  platformio.ini    # Hub build configuration
+```
+
+## Contributing
+We welcome contributions. Please review the open issues and submit pull requests for enhancements.
+
+## License
+This project is licensed under the MIT License.
+
+## Contact
+Developed by Achmad Miftahurrojak.
+GitHub: [hamin-baek](https://github.com/hamin-baek)
+
+***
+**Description:** LoRa based wireless sensor network for forest fire detection.
+**Tags:** lora, esp32, wireless-sensor-network
