@@ -1,0 +1,8 @@
+{
+  "name": "forest-fire-node",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "pio run",
+    "upload": "pio run -t upload"
+  }
+}

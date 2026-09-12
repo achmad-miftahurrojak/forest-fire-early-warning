@@ -1,0 +1,11 @@
+{
+  "name": "forest-fire-early-warning",
+  "version": "1.0.0",
+  "workspaces": ["hub", "node"],
+  "scripts": {
+    "build": "turbo run build"
+  },
+  "devDependencies": {
+    "turbo": "latest"
+  }
+}
