@@ -12,10 +12,9 @@
 
 HardwareSerial sim800l(2);
 
-// Thresholds for fire warning
-const float TEMP_HIGH = 40.0; // Celsius
-const float HUM_LOW = 30.0;   // %
-const int SMOKE_HIGH = 2000;  // Analog threshold
+const float TEMP_HIGH = 40.0;
+const float HUM_LOW = 30.0;
+const int SMOKE_HIGH = 2000;
 
 void setup() {
   Serial.begin(115200);
@@ -51,7 +50,6 @@ void loop() {
     }
     Serial.println("Received: " + incoming);
 
-    // Basic Parsing (NodeID,Temp,Hum,Smoke,Moisture)
     int firstComma = incoming.indexOf(',');
     int secComma = incoming.indexOf(',', firstComma + 1);
     int thirdComma = incoming.indexOf(',', secComma + 1);
@@ -70,7 +68,7 @@ void loop() {
         digitalWrite(BUZZER_PIN, HIGH);
         String alertMsg = "FIRE ALERT from " + node + "! Temp: " + String(temp) + "C, Smoke detected!";
         sendSMSAlert(alertMsg);
-        delay(5000); // Siren duration
+        delay(5000);
         digitalWrite(BUZZER_PIN, LOW);
       }
     }

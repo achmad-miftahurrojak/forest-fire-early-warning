@@ -15,7 +15,6 @@
 
 DHT dht(DHTPIN, DHTTYPE);
 
-// Deep sleep for 5 minutes (300 seconds)
 #define uS_TO_S_FACTOR 1000000ULL
 #define TIME_TO_SLEEP  300
 
@@ -25,24 +24,21 @@ void setup() {
   dht.begin();
   LoRa.setPins(LORA_SS, LORA_RST, LORA_DIO0);
   
-  if (!LoRa.begin(915E6)) { // 915 MHz band (Adjust for region)
+  if (!LoRa.begin(915E6)) {
     Serial.println("Starting LoRa failed!");
     delay(1000);
     ESP.restart();
   }
 
-  // Read sensors
   float h = dht.readHumidity();
   float t = dht.readTemperature();
   int mq2_val = analogRead(MQ2_PIN);
   int soil_val = analogRead(SOIL_PIN);
 
-  // Check valid reading
   if (isnan(h) || isnan(t)) {
     h = 0; t = 0;
   }
 
-  // Compress payload: NodeID,Temp,Hum,Smoke,Moisture
   String payload = String(NODE_ID) + "," + String(t, 1) + "," + String(h, 1) + "," + String(mq2_val) + "," + String(soil_val);
   
   Serial.println("Transmitting: " + payload);
@@ -57,5 +53,4 @@ void setup() {
 }
 
 void loop() {
-  // Never reached because of deep sleep
 }
