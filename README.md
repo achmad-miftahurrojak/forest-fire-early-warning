@@ -13,8 +13,7 @@ A LoRa mesh network architecture designed for early forest fire detection in are
 4. [Usage](#usage)
 5. [Directory Structure](#directory-structure)
 6. [Contributing](#contributing)
-7. [License](#license)
-8. [Contact](#contact)
+7. [Contact](#contact)
 
 ## Features
 * Dual architecture consisting of ultra low power sensor nodes and a central alert hub.
@@ -61,9 +60,6 @@ hub/
 ## Contributing
 We welcome contributions. Please review the open issues and submit pull requests for enhancements.
 
-## License
-This project is licensed under the MIT License.
-
 ## Contact
 Developed by Achmad Miftahurrojak.
 GitHub: [hamin-baek](https://github.com/hamin-baek)
@@ -71,3 +67,4 @@ GitHub: [hamin-baek](https://github.com/hamin-baek)
 ***
 **Description:** LoRa based wireless sensor network for forest fire detection.
 **Tags:** lora, esp32, wireless-sensor-network
+
