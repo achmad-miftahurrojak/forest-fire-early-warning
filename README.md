@@ -2,11 +2,11 @@
 
 # Forest Fire Early Warning System
 
-[English](README.md) · [Bahasa Indonesia](README.id.md) · [한국어](README.ko.md)
+<a href="README.md"><img alt="English" src="https://img.shields.io/badge/English-DFE0E5"></a> <a href="README.id.md"><img alt="Bahasa Indonesia" src="https://img.shields.io/badge/Bahasa%20Indonesia-DFE0E5"></a> <a href="README.ko.md"><img alt="한국어" src="https://img.shields.io/badge/%ED%95%9C%EA%B5%AD%EC%96%B4-DFE0E5"></a>
+
+<img alt="C++" src="https://img.shields.io/badge/C%2B%2B-11-00599C?logo=c%2B%2B&logoColor=white"> <img alt="ESP32" src="https://img.shields.io/badge/ESP32-E7352C?logo=espressif&logoColor=white"> <img alt="LoRa" src="https://img.shields.io/badge/LoRa-00A9E0?logo=semtech&logoColor=white">
 
 ESP32 LoRa nodes that measure fire-risk conditions and send validated alerts to a central hub.
-
-![C++](https://img.shields.io/badge/C%2B%2B-11-00599C?logo=c%2B%2B&logoColor=white) ![PlatformIO](https://img.shields.io/badge/PlatformIO-Core-F56600?logo=platformio&logoColor=white) ![ESP32](https://img.shields.io/badge/ESP32-Espressif-E7352C) ![LoRa](https://img.shields.io/badge/LoRa-Communication-00A9E0)
 
 [Features](#features) · [Architecture](ARCHITECTURE.md) · [Build](#build-and-upload) · [Project layout](#project-layout)
 
