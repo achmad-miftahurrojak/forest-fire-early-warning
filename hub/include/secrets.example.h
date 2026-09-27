@@ -1,0 +1,6 @@
+#ifndef FOREST_FIRE_SECRETS_H
+#define FOREST_FIRE_SECRETS_H
+
+static const char* SMS_TARGET_NUMBER = "+620000000000";
+
+#endif

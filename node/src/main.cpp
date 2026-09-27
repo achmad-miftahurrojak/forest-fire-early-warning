@@ -36,7 +36,9 @@ void setup() {
   int soil_val = analogRead(SOIL_PIN);
 
   if (isnan(h) || isnan(t)) {
-    h = 0; t = 0;
+    Serial.println("DHT22 read failed; skipping packet.");
+    esp_sleep_enable_timer_wakeup(TIME_TO_SLEEP * uS_TO_S_FACTOR);
+    esp_deep_sleep_start();
   }
 
   String payload = String(NODE_ID) + "," + String(t, 1) + "," + String(h, 1) + "," + String(mq2_val) + "," + String(soil_val);
@@ -45,7 +47,9 @@ void setup() {
   
   LoRa.beginPacket();
   LoRa.print(payload);
-  LoRa.endPacket();
+  if (LoRa.endPacket() == 0) {
+    Serial.println("LoRa transmission failed.");
+  }
 
   Serial.println("Going to sleep now");
   esp_sleep_enable_timer_wakeup(TIME_TO_SLEEP * uS_TO_S_FACTOR);

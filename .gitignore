@@ -3,6 +3,9 @@
 !**/.env.example
 **/node_modules/
 **/dist/
+.pio/
+.vscode/
+**/secrets.h
 node_modules
 
 .env
