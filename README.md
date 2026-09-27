@@ -1,6 +1,6 @@
 # Forest Fire Early Warning System
 
-An IoT-based mesh network system utilizing LoRa technology for real-time forest fire detection and early warning alerts.
+An IoT-based LoRa node-to-hub system for real-time forest fire detection and early warning alerts.
 
 ![C++](https://img.shields.io/badge/C++-11-00599C?logo=c%2B%2B&logoColor=white)
 ![PlatformIO](https://img.shields.io/badge/PlatformIO-Core-F56600?logo=platformio&logoColor=white)
@@ -10,7 +10,7 @@ An IoT-based mesh network system utilizing LoRa technology for real-time forest 
 ## Table of Contents
 
 1. [Features](#features)
-2. [Screenshot](#screenshot)
+2. [Architecture](#architecture)
 3. [Getting Started](#getting-started)
 4. [Usage](#usage)
 5. [Directory Structure](#directory-structure)
@@ -21,15 +21,15 @@ An IoT-based mesh network system utilizing LoRa technology for real-time forest 
 
 ## Features
 
-- Mesh Communication: Long-range, low-power data transmission via LoRa between sensor nodes and the central hub.
+- LoRa Communication: Long-range, low-power data transmission from sensor nodes to the central hub.
 - Multi-Sensor Array: Integrates MQ-2 (gas/smoke), DHT22 (temperature/humidity), and soil moisture sensors.
 - Real-Time Alerts: Automated SMS notification dispatch via SIM800L module upon critical threshold detection.
 - Distributed Architecture: Separate codebases for peripheral sensor nodes and the central coordinating hub.
 - Turborepo Integration: Optimized parallel build processes for multiple microcontroller targets.
 
-## Screenshot
+## Architecture
 
-![Hardware Setup Demo](https://via.placeholder.com/800x450?text=Hardware+Setup+Demo)
+See [ARCHITECTURE.md](ARCHITECTURE.md) for the node-to-hub data flow and alert path.
 
 ## Getting Started
 
@@ -42,7 +42,7 @@ An IoT-based mesh network system utilizing LoRa technology for real-time forest 
 ### Installation Steps
 
 ```bash
-git clone https://github.com/hamin-baek/hamin-baek.git
+git clone https://github.com/achmad-miftahurrojak/forest-fire-early-warning.git
 cd hardware/forest-fire-early-warning
 npm install
 ```
@@ -84,4 +84,4 @@ This project is licensed under the MIT License.
 ## Contact
 
 Created by Achmad Miftahurrojak.
-[GitHub](https://github.com/hamin-baek)
+[GitHub](https://github.com/achmad-miftahurrojak)
