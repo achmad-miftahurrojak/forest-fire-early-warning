@@ -2,6 +2,8 @@
 
 # Forest Fire Early Warning System
 
+[English](README.md) · [Bahasa Indonesia](README.id.md) · [한국어](README.ko.md)
+
 ESP32 LoRa nodes that measure fire-risk conditions and send validated alerts to a central hub.
 
 ![C++](https://img.shields.io/badge/C%2B%2B-11-00599C?logo=c%2B%2B&logoColor=white) ![PlatformIO](https://img.shields.io/badge/PlatformIO-Core-F56600?logo=platformio&logoColor=white) ![ESP32](https://img.shields.io/badge/ESP32-Espressif-E7352C) ![LoRa](https://img.shields.io/badge/LoRa-Communication-00A9E0)
