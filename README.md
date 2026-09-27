@@ -62,7 +62,7 @@ We welcome contributions. Please review the open issues and submit pull requests
 
 ## Contact
 Developed by Achmad Miftahurrojak.
-GitHub: [hamin-baek](https://github.com/hamin-baek)
+GitHub: [achmad-miftahurrojak](https://github.com/achmad-miftahurrojak)
 
 ***
 **Description:** LoRa based wireless sensor network for forest fire detection.
