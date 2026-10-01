@@ -12,3 +12,25 @@ node_modules
 .env.*
 node_modules/
 dist/
+# Local credentials
+!.env.example
+!.env.*.example
+!.env.example.*
+!.env.sample
+!.env.*.sample
+# Private keys and certificates
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+# Agent instructions and skill packs
+.agents/
+.claude/
+.codex/
+**/AGENTS.md
+**/CLAUDE.md
+# Local secret manifests
+**/secrets.yaml
+**/secrets.yml
+**/credentials.json
